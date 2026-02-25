@@ -1,0 +1,15 @@
+[project]
+name = "deep-diarizer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-core>=1.2.13",
+    "langgraph>=1.0.8",
+    "pandas>=2.3.3",
+    "plotly>=6.5.2",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+    "streamlit>=1.54.0",
+]
