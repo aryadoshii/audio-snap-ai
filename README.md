@@ -33,7 +33,6 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 
 Screenshots
 
----
 
 🏠 Interface
 <div align="center">
@@ -42,29 +41,6 @@ Screenshots
 <br><br>
 <img src="frontend/assets/home-sidebar.png" alt="Sidebar with History" width="100%">
 <sub>Session history sidebar with one-click recall</sub>
-</div>
-
----
-
-▶️ YouTube URL Analysis
-<div align="center">
-<img src="frontend/assets/yt-home.png" alt="YouTube Input" width="100%">
-<sub>Paste any YouTube link — thumbnail previews instantly</sub>
-<br><br>
-<img src="frontend/assets/yt-analyzing.png" alt="Analyzing" width="100%">
-<sub>Downloading audio + running Whisper-v3 transcription and GPT-OSS-120B analysis</sub>
-<br><br>
-<img src="frontend/assets/yt-chapters.png" alt="Chapters" width="100%">
-<sub>Smart chapters with timestamps and summaries generated automatically</sub>
-<br><br>
-<img src="frontend/assets/yt-keymoments.png" alt="Key Moments" width="100%">
-<sub>Key moments — the most quotable, shareable clips extracted from the video</sub>
-<br><br>
-<img src="frontend/assets/yt-transcript.png" alt="Transcript" width="100%">
-<sub>Full searchable transcript with timestamps and CSV export</sub>
-<br><br>
-<img src="frontend/assets/yt-topics.png" alt="Topics" width="100%">
-<sub>Topic map — themes identified and cross-referenced across chapters</sub>
 </div>
 
 ---
@@ -86,6 +62,23 @@ Screenshots
 
 ---
 
+▶️ YouTube URL Analysis
+<div align="center">
+<img src="frontend/assets/yt-home.png" alt="YouTube Input" width="100%">
+<sub>Paste any YouTube link — thumbnail previews instantly</sub>
+<br><br>
+<img src="frontend/assets/yt-analyzing.png" alt="Analyzing" width="100%">
+<sub>Downloading audio + running Whisper-v3 transcription and GPT-OSS-120B analysis</sub>
+<br><br>
+<img src="frontend/assets/yt-chapters.png" alt="Chapters" width="100%">
+<sub>Smart chapters with timestamps and summaries generated automatically</sub>
+<br><br>
+<img src="frontend/assets/yt-transcript.png" alt="Transcript" width="100%">
+<sub>Full searchable transcript with timestamps and CSV export</sub>
+</div>
+
+---
+
 🔴 Live Recording
 <div align="center">
 <img src="frontend/assets/live-permission.png" alt="Mic Permission" width="100%">
@@ -97,48 +90,18 @@ Screenshots
 <img src="frontend/assets/live-chapters.png" alt="Live Chapters" width="100%">
 <sub>Chapters generated from live audio — same full analysis as uploaded files</sub>
 <br><br>
-<img src="frontend/assets/live-keymoments.png" alt="Live Key Moments" width="100%">
-<sub>Key moments pulled from the live recording</sub>
-<br><br>
 <img src="frontend/assets/live-transcript.png" alt="Live Transcript" width="100%">
 <sub>Timestamped transcript from browser mic audio</sub>
-<br><br>
-<img src="frontend/assets/live-topics.png" alt="Live Topics" width="100%">
-<sub>Topic map from live recording — same depth of analysis regardless of input source</sub>
 </div>
 
 ---
 
 ## Architecture
 
-AudioSnap uses a **LangGraph agentic pipeline** — not a simple linear chain:
 
-```
-Audio Input
-    │
-    ▼
-Whisper-v3 Transcription
-    │
-    ▼
-Quality Gate ──── too short? ──► Short Clip Mode
-    │
-    ▼
-Chapter Generation
-    │
-    ▼
-Chapter Retry Loop  (if < 3 chapters generated)
-    │
-    ▼
-Key Moments · Topic Map · Episode Brief
-    │
-    ▼
-Self-Evaluation Node  (model scores its own output 1–10)
-    │
-    ▼
-Structured Result
-```
+<img src="frontend/assets/architecture.png" alt="System Architecture Diagram" width="1000"/>
 
-Three agentic behaviors: **conditional routing**, **self-correction loop**, and **self-evaluation**.
+
 
 ---
 
