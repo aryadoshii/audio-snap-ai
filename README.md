@@ -45,7 +45,7 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 
 ---
 
-🎙 Podcast / File Upload
+🎙 Podcast
 <div align="center">
 <img src="frontend/assets/pod-chapters.png" alt="Podcast Chapters" width="100%">
 <sub>Smart chapters with timestamps — automatically grouped by topic</sub>
