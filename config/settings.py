@@ -5,20 +5,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings:
-    # Base Paths
-    BASE_DIR = Path(__file__).resolve().parent.parent
-    DATA_DIR = BASE_DIR / "data"
-    INPUT_DIR = DATA_DIR / "inputs"
-    DB_PATH = DATA_DIR / "diarizer.db"
+    BASE_DIR  = Path(__file__).resolve().parent.parent
+    INPUT_DIR = BASE_DIR / "data" / "inputs"
+    DB_PATH   = BASE_DIR / "data" / "history.db"
 
-    # API Setup
-    API_KEY = os.getenv("QUBRID_API_KEY")
-    API_URL = "https://platform.qubrid.com/api/v1/qubridai/audio/transcribe"
-    MODEL_NAME = "openai/whisper-large-v3"
+    API_KEY      = os.getenv("QUBRID_API_KEY")
 
-    @classmethod
-    def setup_directories(cls):
-        """Creates required directories instantly."""
-        cls.INPUT_DIR.mkdir(parents=True, exist_ok=True)
+    WHISPER_URL   = "https://platform.qubrid.com/api/v1/qubridai/audio/transcribe"
+    WHISPER_MODEL = "openai/whisper-large-v3"
+
+    LLM_BASE_URL = "https://platform.qubrid.com/v1"
+    LLM_MODEL    = "openai/gpt-oss-120b"
+
+    def setup_directories(self):
+        self.INPUT_DIR.mkdir(parents=True, exist_ok=True)
+        self.DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 config = Settings()
