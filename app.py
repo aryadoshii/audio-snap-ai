@@ -3,7 +3,7 @@ from PIL import Image
 from config.settings import config
 
 st.set_page_config(
-    page_title="Audio Intel",
+    page_title="Audio Snap AI",
     page_icon=Image.open("qubrid_logo.png"),
     layout="wide",
     initial_sidebar_state="collapsed"
