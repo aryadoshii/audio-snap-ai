@@ -1,12 +1,4 @@
-<div align="center">
-
-<!-- <img src="assets/banner.png" alt="AudioSnap AI Banner" width="100%"> -->
-
-<br>
-
-<img src="assets/qubrid_logo.png" alt="Qubrid AI" height="36">
-
-<br><br>
+![AudioSnap AI](frontend/assets/qubrid_banner.png)
 
 # AudioSnap AI
 
@@ -39,77 +31,81 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 
 ---
 
-## Screenshots
+Screenshots
 
-### 🏠 Interface
+---
 
+🏠 Interface
 <div align="center">
-
-<img src="assets/screenshots/home-collapsed.png" alt="Clean Interface" width="100%">
+<img src="frontend/assets/home-collapsed.png" alt="Clean Interface" width="100%">
 <sub>Clean, focused interface with collapsed sidebar</sub>
-
 <br><br>
-
-<img src="assets/screenshots/home-sidebar.png" alt="Sidebar with History" width="100%">
+<img src="frontend/assets/home-sidebar.png" alt="Sidebar with History" width="100%">
 <sub>Session history sidebar with one-click recall</sub>
-
-<br><br>
-
-<img src="assets/screenshots/mode-selector.png" alt="Mode Selector" width="100%">
-<sub>Three input modes — Upload File · YouTube URL · Record Live</sub>
-
-<br><br>
-
-<img src="assets/screenshots/sidebar-history.png" alt="History Panel" width="100%">
-<sub>Full history panel with timestamps</sub>
-
 </div>
 
 ---
 
-### ▶️ YouTube URL Analysis
-
+▶️ YouTube URL Analysis
 <div align="center">
-
-<img src="assets/screenshots/yt-home.png" alt="YouTube Input" width="100%">
+<img src="frontend/assets/yt-home.png" alt="YouTube Input" width="100%">
 <sub>Paste any YouTube link — thumbnail previews instantly</sub>
-
 <br><br>
-
-<img src="assets/screenshots/yt-analyzing.png" alt="Analyzing" width="100%">
+<img src="frontend/assets/yt-analyzing.png" alt="Analyzing" width="100%">
 <sub>Downloading audio + running Whisper-v3 transcription and GPT-OSS-120B analysis</sub>
-
 <br><br>
-
-<img src="assets/screenshots/yt-chapters.png" alt="Chapters" width="100%">
+<img src="frontend/assets/yt-chapters.png" alt="Chapters" width="100%">
 <sub>Smart chapters with timestamps and summaries generated automatically</sub>
-
 <br><br>
-
-<img src="assets/screenshots/yt-keymoments.png" alt="Key Moments" width="100%">
+<img src="frontend/assets/yt-keymoments.png" alt="Key Moments" width="100%">
 <sub>Key moments — the most quotable, shareable clips extracted from the video</sub>
-
 <br><br>
-
-<img src="assets/screenshots/yt-transcript.png" alt="Transcript" width="100%">
+<img src="frontend/assets/yt-transcript.png" alt="Transcript" width="100%">
 <sub>Full searchable transcript with timestamps and CSV export</sub>
-
 <br><br>
-
-<img src="assets/screenshots/yt-topics.png" alt="Topics" width="100%">
+<img src="frontend/assets/yt-topics.png" alt="Topics" width="100%">
 <sub>Topic map — themes identified and cross-referenced across chapters</sub>
-
 </div>
 
 ---
 
-### 🎙 Podcast / File Upload
-> Screenshots coming soon
+🎙 Podcast / File Upload
+<div align="center">
+<img src="frontend/assets/pod-chapters.png" alt="Podcast Chapters" width="100%">
+<sub>Smart chapters with timestamps — automatically grouped by topic</sub>
+<br><br>
+<img src="frontend/assets/pod-keymoments.png" alt="Key Moments" width="100%">
+<sub>Key moments extracted as quotable cards — ready to clip and share</sub>
+<br><br>
+<img src="frontend/assets/pod-transcript.png" alt="Full Transcript" width="100%">
+<sub>Full searchable transcript with timestamps and one-click CSV export</sub>
+<br><br>
+<img src="frontend/assets/pod-topics.png" alt="Topic Map" width="100%">
+<sub>Topic map — themes cross-referenced across chapters</sub>
+</div>
 
 ---
 
-### 🔴 Live Recording
-> Screenshots coming soon
+🔴 Live Recording
+<div align="center">
+<img src="frontend/assets/live-permission.png" alt="Mic Permission" width="100%">
+<sub>Browser mic permission prompt — records directly in the browser, no installs needed</sub>
+<br><br>
+<img src="frontend/assets/live-recording.png" alt="Recording with Waveform" width="100%">
+<sub>Live waveform visualizer while recording — hit Analyze when done</sub>
+<br><br>
+<img src="frontend/assets/live-chapters.png" alt="Live Chapters" width="100%">
+<sub>Chapters generated from live audio — same full analysis as uploaded files</sub>
+<br><br>
+<img src="frontend/assets/live-keymoments.png" alt="Live Key Moments" width="100%">
+<sub>Key moments pulled from the live recording</sub>
+<br><br>
+<img src="frontend/assets/live-transcript.png" alt="Live Transcript" width="100%">
+<sub>Timestamped transcript from browser mic audio</sub>
+<br><br>
+<img src="frontend/assets/live-topics.png" alt="Live Topics" width="100%">
+<sub>Topic map from live recording — same depth of analysis regardless of input source</sub>
+</div>
 
 ---
 
