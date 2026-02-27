@@ -169,18 +169,30 @@ audio-snap-ai/
 ### Installation
 
 ```bash
-# Clone
+# 1. Clone repository
 git clone https://github.com/aryadoshii/audio-snap-ai.git
 cd audio-snap-ai
 
-# Install dependencies
-pip install -e .
+# 2. Install UV package manager
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.zshrc  # Reload shell (or: source ~/.bashrc)
 
-# Configure environment
+# 3. Create virtual environment
+uv venv
+
+# 4. Activate virtual environment
+source .venv/bin/activate  # macOS/Linux
+# OR: .venv\Scripts\activate  # Windows
+
+# 5. Install dependencies
+uv sync  # Uses uv.lock for exact versions
+# OR: uv pip install -e .  # Uses pyproject.toml
+
+# 6. Set up API key
 cp .env.example .env
-# Add your QUBRID_API_KEY to .env
+nano .env  # Add your QUBRID_API_KEY
 
-# Launch
+# 7. Run the app
 streamlit run app.py
 ```
 
