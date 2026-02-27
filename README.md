@@ -41,6 +41,9 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 <br><br>
 <img src="frontend/assets/home-sidebar.png" alt="Sidebar with History" width="100%">
 <sub>Session history sidebar with one-click recall</sub>
+ <br><br>
+<img src="frontend/assets/mode-selector.png" alt="Mode Selector" width="100%">
+<sub>Three input modes — Upload File · YouTube URL · Record Live</sub>
 </div>
 
 ---
