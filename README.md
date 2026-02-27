@@ -1,9 +1,11 @@
-![AudioSnap AI](frontend/assets/qubrid_banner.png)
+<div align="center">
+
+<img src="frontend/assets/qubrid_banner.png" alt="AudioSnap AI" width="100%">
 
 # AudioSnap AI
 
 **Turn any audio into instant intelligence.**  
-Chapters · Key Moments · Full Transcript — in seconds.
+Chapters · Key Moments · Full Transcript - in seconds.
 
 <br>
 
@@ -14,8 +16,6 @@ Chapters · Key Moments · Full Transcript — in seconds.
 ![License](https://img.shields.io/badge/License-MIT-475569?style=flat-square)
 
 </div>
-
----
 
 ## What it does
 
@@ -31,7 +31,7 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 
 ---
 
-Screenshots
+## Screenshots
 
 
 🏠 Interface
@@ -99,44 +99,8 @@ Screenshots
 ## Architecture
 
 
-<img src="frontend/assets/architecture.png" alt="System Architecture Diagram" width="1000"/>
+<img src="frontend/assets/architecture.png" alt="System Architecture Diagram" width="500"/>
 
-
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.10+
-- A [Qubrid AI](https://qubrid.com) API key
-- `ffmpeg` installed (for YouTube audio processing)
-
-### Installation
-
-```bash
-# Clone
-git clone https://github.com/aryadoshii/audio-snap-ai.git
-cd audio-snap-ai
-
-# Install dependencies
-pip install -e .
-
-# Configure environment
-cp .env.example .env
-# Add your QUBRID_API_KEY to .env
-
-# Launch
-streamlit run app.py
-```
-
-### Environment Variables
-
-```env
-QUBRID_API_KEY=your_api_key_here
-QUBRID_BASE_URL=https://api.qubrid.com/v1
-```
 
 ---
 
@@ -188,8 +152,44 @@ audio-snap-ai/
 
 ---
 
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- A [Qubrid AI](https://qubrid.com) API key
+- `ffmpeg` installed (for YouTube audio processing)
+
+### Installation
+
+```bash
+# Clone
+git clone https://github.com/aryadoshii/audio-snap-ai.git
+cd audio-snap-ai
+
+# Install dependencies
+pip install -e .
+
+# Configure environment
+cp .env.example .env
+# Add your QUBRID_API_KEY to .env
+
+# Launch
+streamlit run app.py
+```
+
+### Environment Variables
+
+```env
+QUBRID_API_KEY=your_api_key_here
+QUBRID_BASE_URL=https://api.qubrid.com/v1
+```
+---
+
+
 <div align="center">
 
-Built with ⚡ on [Qubrid AI](https://qubrid.com)
+  **Made with ❤️ by Qubrid AI**
 
 </div>
