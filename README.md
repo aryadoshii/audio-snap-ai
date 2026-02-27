@@ -41,6 +41,8 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 
 ## Screenshots
 
+### 🏠 Interface
+
 <div align="center">
 
 <img src="assets/screenshots/home-collapsed.png" alt="Clean Interface" width="100%">
@@ -62,6 +64,52 @@ Powered by **Whisper-v3** for transcription and **GPT-OSS-120B** for analysis, r
 <sub>Full history panel with timestamps</sub>
 
 </div>
+
+---
+
+### ▶️ YouTube URL Analysis
+
+<div align="center">
+
+<img src="assets/screenshots/yt-home.png" alt="YouTube Input" width="100%">
+<sub>Paste any YouTube link — thumbnail previews instantly</sub>
+
+<br><br>
+
+<img src="assets/screenshots/yt-analyzing.png" alt="Analyzing" width="100%">
+<sub>Downloading audio + running Whisper-v3 transcription and GPT-OSS-120B analysis</sub>
+
+<br><br>
+
+<img src="assets/screenshots/yt-chapters.png" alt="Chapters" width="100%">
+<sub>Smart chapters with timestamps and summaries generated automatically</sub>
+
+<br><br>
+
+<img src="assets/screenshots/yt-keymoments.png" alt="Key Moments" width="100%">
+<sub>Key moments — the most quotable, shareable clips extracted from the video</sub>
+
+<br><br>
+
+<img src="assets/screenshots/yt-transcript.png" alt="Transcript" width="100%">
+<sub>Full searchable transcript with timestamps and CSV export</sub>
+
+<br><br>
+
+<img src="assets/screenshots/yt-topics.png" alt="Topics" width="100%">
+<sub>Topic map — themes identified and cross-referenced across chapters</sub>
+
+</div>
+
+---
+
+### 🎙 Podcast / File Upload
+> Screenshots coming soon
+
+---
+
+### 🔴 Live Recording
+> Screenshots coming soon
 
 ---
 
@@ -106,6 +154,24 @@ Three agentic behaviors: **conditional routing**, **self-correction loop**, and 
 - A [Qubrid AI](https://qubrid.com) API key
 - `ffmpeg` installed (for YouTube audio processing)
 
+### Installation
+
+```bash
+# Clone
+git clone https://github.com/aryadoshii/audio-snap-ai.git
+cd audio-snap-ai
+
+# Install dependencies
+pip install -e .
+
+# Configure environment
+cp .env.example .env
+# Add your QUBRID_API_KEY to .env
+
+# Launch
+streamlit run app.py
+```
+
 ### Environment Variables
 
 ```env
@@ -122,19 +188,6 @@ QUBRID_BASE_URL=https://api.qubrid.com/v1
 | **Upload File** | MP3, WAV, M4A | 200 MB |
 | **YouTube URL** | Any public video | First 12 min |
 | **Record Live** | Browser microphone | Session length |
-
----
-
-## Stack
-
-| Layer | Technology |
-|-------|-----------|
-| UI | Streamlit + custom CSS/JS |
-| Transcription | Whisper-v3 via Qubrid API |
-| Intelligence | GPT-OSS-120B via Qubrid API |
-| Orchestration | LangGraph |
-| YouTube | yt-dlp |
-| History | SQLite |
 
 ---
 
@@ -163,23 +216,18 @@ audio-snap-ai/
 
 ---
 
-### Installation
+## Stack
 
-```bash
-# Clone
-git clone https://github.com/aryadoshii/audio-snap-ai.git
-cd audio-snap-ai
+| Layer | Technology |
+|-------|-----------|
+| UI | Streamlit + custom CSS/JS |
+| Transcription | Whisper-v3 via Qubrid API |
+| Intelligence | GPT-OSS-120B via Qubrid API |
+| Orchestration | LangGraph |
+| YouTube | yt-dlp |
+| History | SQLite |
 
-# Install dependencies
-pip install -e .
-
-# Configure environment
-cp .env.example .env
-# Add your QUBRID_API_KEY to .env
-
-# Launch
-streamlit run app.py
-```
+---
 
 <div align="center">
 
