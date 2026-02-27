@@ -105,12 +105,12 @@ def render_youtube_input():
         </div>
     </div>
     """, unsafe_allow_html=True)
-    url = st.text_input("", placeholder="https://www.youtube.com/watch?v=...", key="yt_url")
+    url = st.text_input("YouTube URL", placeholder="https://www.youtube.com/watch?v=...", key="yt_url", label_visibility="collapsed")
     if url and url.strip():
         video_id = _extract_yt_id(url.strip())
         if video_id:
             st.markdown(f'<div style="text-align:center;margin:12px 0;"><img src="https://img.youtube.com/vi/{video_id}/mqdefault.jpg" style="border-radius:12px;max-width:360px;width:100%;border:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 32px rgba(0,0,0,0.4);"></div>', unsafe_allow_html=True)
-        if st.button("✨ Analyze First 12 Minutes", use_container_width=True, type="primary"):
+        if st.button("Analyze Video", use_container_width=True, type="primary"):
             with st.spinner("Downloading audio from YouTube…"):
                 audio_path, title, error = _download_youtube(url.strip())
             if error:
@@ -133,6 +133,8 @@ def _download_youtube(url):
             "postprocessors": [{"key":"FFmpegExtractAudio","preferredcodec":"mp3","preferredquality":"128"}],
             "download_sections": [{"*": "0:00-12:00"}],
             "noplaylist": True, "quiet": True,
+            "no_warnings": True,
+            "extractor_args": {"youtube": {"js_runtimes": ["deno"]}},
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=True)
@@ -191,13 +193,14 @@ def render_results(result=None, filename=None, audio_path=None):
     topics     = result.get("topics", [])
     confidence = result.get("confidence_scores", {})
 
-    if confidence and isinstance(confidence, dict) and confidence.get("overall"):
-        overall = confidence["overall"]
-        color = "#22c55e" if overall >= 7 else "#f59e0b" if overall >= 5 else "#ef4444"
-        st.markdown(f'<div class="confidence-bar"><span style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#475569;">🤖 AI CONFIDENCE</span><span style="color:{color};font-weight:800;font-size:1.1rem;margin:0 8px;">{overall}/10</span><span style="color:#94a3b8;font-size:0.8rem;font-style:italic;">{confidence.get("notes","")}</span></div>', unsafe_allow_html=True)
-
     if brief:
-        st.markdown(f'<div class="brief-card"><div class="brief-label">📋 Summary</div><div class="brief-text">{brief}</div></div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="brief-card">'
+            f'<div class="brief-label">📋 Summary</div>'
+            f'<div class="brief-text">{brief}</div>'
+            f'</div>',
+            unsafe_allow_html=True
+        )
 
     if audio_path and os.path.exists(audio_path):
         st.audio(audio_path)
@@ -221,7 +224,7 @@ def render_results(result=None, filename=None, audio_path=None):
             st.info("No key moments found.")
 
     with tab3:
-        query  = st.text_input("", placeholder="🔍  Search the transcript…")
+        query  = st.text_input("Search transcript", placeholder="🔍  Search the transcript…", label_visibility="collapsed")
         df_all = pd.DataFrame(segments)[["timestamp","text"]] if segments else pd.DataFrame()
         def _highlight(text, q):
             return _re.sub(f"({_re.escape(q)})", r'<mark style="background:rgba(20,184,166,0.35);color:#ccfbf1;border-radius:3px;padding:0 2px;">\1</mark>', text, flags=_re.IGNORECASE)
